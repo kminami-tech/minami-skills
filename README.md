@@ -6,7 +6,7 @@ kminami-tech 用のプライベート Claude Code プラグインマーケット
 
 ```bash
 claude plugin marketplace add kminami-tech/minami-skills
-claude plugin install writing-conventional-commits@minami-skills
+claude plugin install git-workflow@minami-skills
 ```
 
 Claude Code のセッション内からは `/plugin` で追加・管理できる。
@@ -16,9 +16,35 @@ kminami-tech のリポジトリを読める環境からのみ取得できる。
 
 ## プラグイン
 
-| プラグイン | 内容 |
+### `git-workflow`
+
+git 周りの文章を、実際の diff を読んで日本語で書く。どちらのスキルも
+コマンドの実行はせず、文章を提示するところまでを担う。
+
+| スキル | 内容 |
 |---|---|
-| `writing-conventional-commits` | ステージされた diff を読み、Conventional Commits 形式のコミットメッセージを組む（説明は日本語）。`git commit` は実行しない |
+| `writing-conventional-commits` | ステージされた diff から Conventional Commits 形式のコミットメッセージを組む |
+| `writing-pull-requests` | ベースブランチとの差分から PR のタイトルと説明文を組む |
+
+## スキル単位の制御
+
+プラグインを有効にしたまま、スキルごとに表示を変えられる。
+`~/.claude/settings.json`（プロジェクト限定なら `.claude/settings.json`）に書く。
+
+```json
+{
+  "skillOverrides": {
+    "writing-pull-requests": "user-invocable-only"
+  }
+}
+```
+
+| 値 | 挙動 |
+|---|---|
+| `on`（既定） | 通常どおり |
+| `name-only` | 一覧に出すが description を隠す |
+| `user-invocable-only` | モデルからは見えず、`/名前` で呼んだときだけ動く |
+| `off` | どちらからも見えない |
 
 ## 構成
 
@@ -29,8 +55,13 @@ plugins/<plugin-name>/
   skills/<skill-name>/SKILL.md      スキル本体
 ```
 
-## プラグインを追加する
+## スキルを追加する
 
-1. `plugins/<name>/` を作り、`.claude-plugin/plugin.json` と `skills/<name>/SKILL.md` を置く
-2. `.claude-plugin/marketplace.json` の `plugins` 配列に追記する
-3. push したら `claude plugin marketplace update minami-skills` で反映する
+同じ系統のスキルなら既存プラグインの `skills/` に足すだけでよい。
+系統が違うなら新しいプラグインを作る。
+
+1. `plugins/<plugin>/skills/<skill>/SKILL.md` を置く
+2. 新しいプラグインなら `.claude-plugin/plugin.json` も作り、
+   `.claude-plugin/marketplace.json` の `plugins` 配列に追記する
+3. `plugin.json` と marketplace.json の `version` を上げる
+4. push したら `claude plugin marketplace update minami-skills` で反映する

@@ -8,10 +8,10 @@
   },
   "plugins": [
     {
-      "name": "writing-conventional-commits",
-      "source": "./plugins/writing-conventional-commits",
-      "description": "Composes Conventional Commits messages from the staged diff, with Japanese descriptions.",
-      "version": "0.1.0",
+      "name": "git-workflow",
+      "source": "./plugins/git-workflow",
+      "description": "Writes commit messages and pull request descriptions from the actual diff, in Japanese.",
+      "version": "0.2.0",
       "author": {
         "name": "kminami-tech"
       },
@@ -20,7 +20,9 @@
         "git",
         "commit",
         "conventional-commits",
-        "commit-message"
+        "commit-message",
+        "pull-request",
+        "code-review"
       ]
     }
   ]

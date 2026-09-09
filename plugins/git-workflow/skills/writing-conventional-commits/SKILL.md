@@ -18,7 +18,8 @@ description: Use when about to run git commit, when writing or rewriting a commi
 - コミットメッセージを考える、書き直す、`--amend` で差し替える
 - 「コミットメッセージを作って」と頼まれた
 
-使わない場面: コミット済み履歴の分析、リリースノートの生成、ブランチ名やPRタイトルの命名。
+使わない場面: コミット済み履歴の分析、リリースノートの生成、ブランチ名の命名。
+PR の説明文とタイトルは `writing-pull-requests` を使う。
 
 ## 手順
 
