@@ -1,0 +1,27 @@
+{
+  "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
+  "name": "minami-skills",
+  "description": "Private Claude Code plugin marketplace for kminami-tech",
+  "owner": {
+    "name": "kminami-tech",
+    "url": "https://github.com/kminami-tech"
+  },
+  "plugins": [
+    {
+      "name": "writing-conventional-commits",
+      "source": "./plugins/writing-conventional-commits",
+      "description": "Composes Conventional Commits messages from the staged diff, with Japanese descriptions.",
+      "version": "0.1.0",
+      "author": {
+        "name": "kminami-tech"
+      },
+      "category": "development",
+      "keywords": [
+        "git",
+        "commit",
+        "conventional-commits",
+        "commit-message"
+      ]
+    }
+  ]
+}
