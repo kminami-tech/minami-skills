@@ -11,7 +11,7 @@
       "name": "git-workflow",
       "source": "./plugins/git-workflow",
       "description": "Writes commit messages and pull request descriptions from the actual diff, in Japanese.",
-      "version": "0.2.0",
+      "version": "0.2.1",
       "author": {
         "name": "kminami-tech"
       },
