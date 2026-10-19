@@ -24,6 +24,22 @@
         "pull-request",
         "code-review"
       ]
+    },
+    {
+      "name": "learning",
+      "source": "./plugins/learning",
+      "description": "Guides hands-on learning of new technologies by building step-by-step docs while the user runs every command, in Japanese.",
+      "version": "0.1.0",
+      "author": {
+        "name": "kminami-tech"
+      },
+      "category": "learning",
+      "keywords": [
+        "learning",
+        "hands-on",
+        "tutorial",
+        "documentation"
+      ]
     }
   ]
 }

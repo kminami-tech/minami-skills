@@ -7,6 +7,7 @@ kminami-tech 用のプライベート Claude Code プラグインマーケット
 ```bash
 claude plugin marketplace add kminami-tech/minami-skills
 claude plugin install git-workflow@minami-skills
+claude plugin install learning@minami-skills
 ```
 
 Claude Code のセッション内からは `/plugin` で追加・管理できる。
@@ -25,6 +26,15 @@ git 周りの文章を、実際の diff を読んで日本語で書く。どち�
 |---|---|
 | `writing-conventional-commits` | ステージされた diff から Conventional Commits 形式のコミットメッセージを組む |
 | `writing-pull-requests` | ベースブランチとの差分から PR のタイトルと説明文を組む |
+
+### `learning`
+
+新しい技術を、ユーザー自身が手を動かして学ぶのを支援する。Claude は調査・
+ドキュメント作成・結果の分析を担い、コマンドの実行はユーザーが行う。
+
+| スキル | 内容 |
+|---|---|
+| `hands-on-learning` | 学習用ドキュメントを 1 ステップずつ作り、実行結果を反映しながら進める。`/hands-on-learning` で呼んだときだけ動く |
 
 ## スキル単位の制御
 

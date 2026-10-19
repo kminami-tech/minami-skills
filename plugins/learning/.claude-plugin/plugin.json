@@ -1,0 +1,17 @@
+{
+  "name": "learning",
+  "version": "0.1.0",
+  "description": "Guides hands-on learning of new technologies by building step-by-step docs while the user runs every command, in Japanese.",
+  "author": {
+    "name": "kminami-tech",
+    "url": "https://github.com/kminami-tech"
+  },
+  "repository": "https://github.com/kminami-tech/minami-skills",
+  "keywords": [
+    "learning",
+    "hands-on",
+    "tutorial",
+    "documentation"
+  ],
+  "skills": "./skills/"
+}
